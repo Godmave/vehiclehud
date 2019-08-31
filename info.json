@@ -1,0 +1,11 @@
+
+{
+  "name": "vehiclehud",
+  "title": "HUDs for vehicles",
+  "version": "0.0.4",
+  "date": "08-31-2019",
+  "author": "Godmave",
+  "dependencies": ["base >= 0.17"],
+  "factorio_version": "0.17",
+  "description": "Shows HUDs when driving vehicles"
+}
