@@ -254,7 +254,7 @@ local function updateHud(hud)
     end
 end
 
-local function showVehicleStats(vehicle)
+local function showVehicleStats(vehicle, player)
     local vehiclePrototype = vehicle.prototype
     local max_speed
 
@@ -298,7 +298,7 @@ local function showVehicleStats(vehicle)
         max_speed = vehicle.train.max_forward_speed * 216
     end
 
-    game.print("Max speed: " .. max_speed)
+    player.print("Max speed: " .. (floor(max_speed*100)/100) .. ' km/h')
 end
 
 
@@ -342,12 +342,15 @@ end)
 
 script.on_event(defines.events.on_player_driving_changed_state, function(event)
     local player = game.players[event.player_index]
+    local playerSettings = settings.get_player_settings(player)
 
     if player.driving then
         showHud(player, event.entity)
 
 
-        showVehicleStats(event.entity)
+        if playerSettings["vehiclehud-stats"].value == "yes" then
+            showVehicleStats(event.entity, player)
+        end
 
     else
         hideHud(player)

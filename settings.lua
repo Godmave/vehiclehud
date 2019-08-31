@@ -25,5 +25,12 @@ data:extend({
         setting_type = "runtime-per-user",
         default_value = 100,
     },
+    {
+        type = "string-setting",
+        name = "vehiclehud-stats",
+        setting_type = "runtime-per-user",
+        default_value = "yes",
+        allowed_values = {"no","yes"}
+    },
 
 })

@@ -2,7 +2,7 @@
 {
   "name": "vehiclehud",
   "title": "HUDs for vehicles",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "date": "08-31-2019",
   "author": "Godmave",
   "dependencies": ["base >= 0.17"],
