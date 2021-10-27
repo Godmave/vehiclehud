@@ -347,6 +347,7 @@ script.on_event(defines.events.on_player_driving_changed_state, function(event)
     if player.driving then
         showHud(player, event.entity)
 
+    if event.entity.type == "spider-vehicle" then return end
 
         if playerSettings["vehiclehud-stats"].value == "yes" then
             showVehicleStats(event.entity, player)
